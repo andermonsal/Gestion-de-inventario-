@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ventas - CodeStock</title>
+    <link rel="stylesheet" href="../assets/css/principal.css">
+    <link rel="stylesheet" href="../assets/css/ventas.css">
+    <script src="../assets/js/principal.js" defer></script>
+    <script src="../assets/js/ventas.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="ventas.html">Ventas</a>
+        <a href="historial.html">Historial de Ventas</a>
+        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+    </nav>
+    <div class="contenedor">
+        <h1>Registrar Venta</h1>
+        <form id="formulario-venta" class="formulario-venta">
+            <select id="producto-venta" required>
+                <option value="">Selecciona un producto</option>
+            </select>
+            <input type="number" id="cantidad-venta" placeholder="Cantidad" required>
+            <button type="submit">Registrar Venta</button>
+        </form>
+    </div>
+</body>
+</html>

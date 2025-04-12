@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/datos:/app/datos
+      - ./backend/logs:/app/logs
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Ventas - CodeStock</title>
+    <link rel="stylesheet" href="../assets/css/principal.css">
+    <link rel="stylesheet" href="../assets/css/ventas.css">
+    <script src="../assets/js/principal.js" defer></script>
+    <script>
+        async function cargarHistorial() {
+            try {
+                const ventas = await fetchAPI("/ventas");
+                const cuerpoTabla = document.querySelector("#tabla-ventas tbody");
+                cuerpoTabla.innerHTML = "";
+                ventas.forEach(venta => {
+                    const fila = document.createElement("tr");
+                    fila.innerHTML = `
+                        <td>${venta.id}</td>
+                        <td>${venta.productos.map(p => p.id).join(", ")}</td>
+                        <td>${venta.id_empleado}</td>
+                        <td>${venta.total}</td>
+                        <td>${new Date(venta.fecha).toLocaleString()}</td>
+                    `;
+                    cuerpoTabla.appendChild(fila);
+                });
+            } catch (error) {
+                alert("Error al cargar el historial: " + error.message);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!estaAutenticado()) {
+                window.location.href = "login.html";
+                return;
+            }
+            cargarHistorial();
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="ventas.html">Ventas</a>
+        <a href="historial.html">Historial de Ventas</a>
+        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+    </nav>
+    <div class="contenedor">
+        <h1>Historial de Ventas</h1>
+        <table id="tabla-ventas" class="tabla-ventas">
+            <thead>
+                <tr>
+                    <th>ID Venta</th>
+                    <th>Productos</th>
+                    <th>Empleado</th>
+                    <th>Total</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

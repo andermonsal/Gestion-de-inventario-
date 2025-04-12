@@ -1,0 +1,15 @@
+.formulario-venta {
+    margin-bottom: 20px;
+}
+.formulario-venta input, .formulario-venta select {
+    margin: 5px;
+    padding: 5px;
+}
+.tabla-ventas {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tabla-ventas th, .tabla-ventas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}

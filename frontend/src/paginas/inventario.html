@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario - CodeStock</title>
+    <link rel="stylesheet" href="../assets/css/principal.css">
+    <link rel="stylesheet" href="../assets/css/inventario.css">
+    <script src="../assets/js/principal.js" defer></script>
+    <script src="../assets/js/inventario.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="inventario.html">Inventario</a>
+        <a href="ventas.html">Ventas</a>
+        <a href="historial.html">Historial de Ventas</a>
+        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+    </nav>
+    <div class="contenedor">
+        <h1>Inventario</h1>
+        <form id="formulario-producto" class="formulario-producto">
+            <h2>Agregar Producto</h2>
+            <input type="text" id="id-producto" placeholder="ID" required>
+            <input type="text" id="nombre-producto" placeholder="Nombre" required>
+            <input type="number" id="precio-producto" placeholder="Precio" step="0.01" required>
+            <input type="number" id="cantidad-producto" placeholder="Cantidad" required>
+            <select id="categoria-producto" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="Papelería">Papelería</option>
+                <option value="Tecnología">Tecnología</option>
+            </select>
+            <input type="number" id="stock-minimo" placeholder="Stock Mínimo" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <table id="tabla-inventario" class="tabla-inventario">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

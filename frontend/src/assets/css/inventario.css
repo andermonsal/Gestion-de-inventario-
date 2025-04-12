@@ -1,0 +1,20 @@
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.tabla-inventario th, .tabla-inventario td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.tabla-inventario th {
+    background-color: #f2f2f2;
+}
+.formulario-producto {
+    margin-bottom: 20px;
+}
+.formulario-producto input, .formulario-producto select {
+    margin: 5px;
+    padding: 5px;
+}
